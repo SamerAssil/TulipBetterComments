@@ -14,6 +14,7 @@
 //! example comment
 //* example comment
 //? example comment
+//- example comment
 // Normal comment
 
 unit uTulipBetterComments;
@@ -27,6 +28,7 @@ uses
   Winapi.Windows,
   Vcl.Graphics,
   Vcl.Controls,
+  Vcl.GraphUtil,
   ToolsAPI,
   ToolsAPI.Editor;
 
@@ -142,8 +144,11 @@ begin
     else if StartsText('//!', TrimmedText) then
       Context.Canvas.Font.Color := RGB(255, 128, 0)
     else if StartsText('//?', TrimmedText) then
-      Context.Canvas.Font.Color := clHighlight;
+      Context.Canvas.Font.Color := clHighlight
+    else if StartsText('//-', TrimmedText) then
+      Context.Canvas.Font.Style := Context.Canvas.Font.Style + [fsStrikeOut]
   end;
+
 
   AllowDefaultPainting := true;
 end;
@@ -154,6 +159,7 @@ begin
 end;
 
 procedure TTulipBetterComments.BeginPaint(const Editor: TWinControl; const ForceFullRepaint: Boolean); begin end;
+
 procedure TTulipBetterComments.EditorElided(const Editor: TWinControl; const LogicalLineNum: Integer); begin end;
 procedure TTulipBetterComments.EditorMouseDown(const Editor: TWinControl; Button: TMouseButton; Shift: TShiftState; X, Y: Integer); begin end;
 procedure TTulipBetterComments.EditorMouseMove(const Editor: TWinControl; Shift: TShiftState; X, Y: Integer); begin end;
