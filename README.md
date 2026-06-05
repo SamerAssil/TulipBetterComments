@@ -9,13 +9,15 @@ A Delphi IDE plugin that enhances code readability by colorizing comments dynami
 The plugin intercepts the IDE's text paint events to apply custom colors to single-line comments without altering the actual syntax highlighter. 
 
 
-<img width="560" height="116" alt="Screenshot 2026-05-20 at 20 33 16" src="https://github.com/user-attachments/assets/2aede877-f17c-42bc-ad5b-288c4daa83c2" />
+<img width="775" height="139" alt="Screenshot 2026-06-05 at 15 14 19" src="https://github.com/user-attachments/assets/9e4a64e8-5c9a-4dbf-9730-4efea6bea610" />
+
 
 Supported prefixes:
 * `//*` - Renders in **Red** (Ideal for critical notes, bugs, or errors).
 * `//!` - Renders in **Orange** (Ideal for warnings or important alerts).
 * `//?` - Renders in **Blue** (Ideal for questions, to-dos, or reviews).
-
+* `//-` - Renders with overline style (Ideal for mark code to remove later.).
+  
 ## Compatibility
 
 * **Requires Delphi 11 Alexandria or newer.**
@@ -38,6 +40,7 @@ Simply type the designated prefixes at the start of your comments inside the cod
 //* Critical logic block - Do not modify (Red)
 //! Deprecated method used here (Orange)
 //? Needs refactoring in the next release (Blue)
+//- Needs to remove later (overline)
 ```
 
 ## Roadmap (Future Plans)
