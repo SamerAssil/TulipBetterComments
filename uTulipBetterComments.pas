@@ -145,6 +145,8 @@ begin
       Context.Canvas.Font.Color := RGB(255, 128, 0)
     else if StartsText('//?', TrimmedText) then
       Context.Canvas.Font.Color := clHighlight
+    else if StartsText('//>', TrimmedText) then
+      Context.Canvas.Font.Color := clYellow
     else if StartsText('//-', TrimmedText) then
       Context.Canvas.Font.Style := Context.Canvas.Font.Style + [fsStrikeOut]
   end;
