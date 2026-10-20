@@ -25,6 +25,8 @@ package TulipBetterComments;
 {$IMAGEBASE $400000}
 {$DEFINE DEBUG}
 {$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Tulip Better Comments - Delphi IDE plugin for colorized comments'}
+{$DESIGNONLY}
 {$IMPLICITBUILD ON}
 
 requires
